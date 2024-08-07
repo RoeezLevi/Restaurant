@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-product-search',
@@ -8,6 +8,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class ProductSearchComponent {
   @Output() search: EventEmitter<string> = new EventEmitter<string>();
+  @Input() searchData!: string; // Add this line
 
   filterResults(filterValue: string): void {
     this.search.emit(filterValue.trim().toLowerCase());

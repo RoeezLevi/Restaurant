@@ -1,8 +1,7 @@
 <div>
+      <button mat-button (click)="openNewProductDialog()">
+        Add New Product
+      </button>
+      <app-product-table></app-product-table>
 
-  <mat-grid-list cols="2" rowHeight="2:1">
-  <mat-grid-tile><button mat-button (click)="openNewProductDialog()">Add New Product</button></mat-grid-tile>
-  <!-- <mat-grid-tile><app-product-search [searchData]="searchData" (search)="handleSearch($event)"></app-product-search> -->
-  <mat-grid-tile><app-product-table></app-product-table></mat-grid-tile>
-</mat-grid-list>
 </div>
