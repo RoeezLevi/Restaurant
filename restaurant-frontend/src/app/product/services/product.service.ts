@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, from } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
 import { Product } from '../../models/product.model';
 import { MatDialog } from '@angular/material/dialog';
-import { ProductNewComponent } from '../product-new/product-new.component';
 
 @Injectable({
   providedIn: 'root',

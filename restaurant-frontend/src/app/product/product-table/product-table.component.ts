@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { EditProductDialogComponent } from '../product-edit/product-edit.component';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-product-table',
@@ -30,6 +31,7 @@ import { MatButtonModule } from '@angular/material/button';
     CommonModule,
     MatDialogModule,
     MatButtonModule,
+    MatIconModule,
   ],
   templateUrl: './product-table.component.html',
   styleUrls: ['./product-table.component.css'],

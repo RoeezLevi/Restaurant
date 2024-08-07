@@ -7,6 +7,7 @@ import { ProductService } from '../product/services/product.service';
 import { Product } from '../models/product.model';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductNewComponent } from '../product/product-new/product-new.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-index',
@@ -16,6 +17,7 @@ import { ProductNewComponent } from '../product/product-new/product-new.componen
     ProductTableComponent,
     MatGridListModule,
     ProductSearchComponent,
+    MatIconModule,
   ],
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.css'],
@@ -40,8 +42,7 @@ export class IndexComponent {
 
     dialogRef.afterClosed().subscribe((result: Product) => {
       if (result) {
-        this.productService.createProduct(result).subscribe(() => {
-        });
+        this.productService.createProduct(result).subscribe(() => {});
       } else {
         console.error('Product creation was cancelled or failed.');
       }

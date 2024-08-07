@@ -1,4 +1,10 @@
 <div>
-  <button mat-button (click)="createProduct()">Create</button>
+  <button
+    class="createButton green-button"
+    mat-button
+    (click)="createProduct()"
+  >
+    <mat-icon>add</mat-icon>
+  </button>
   <app-product-table></app-product-table>
 </div>
