@@ -10,16 +10,21 @@ Angular CLI (v12 or higher)
 Installation
 Clone the repository:
 ```
-git (https://github.com/RoeezLevi/Restaurant.git)
+git https://github.com/RoeezLevi/Restaurant.git
 ```
 ```
 cd .\restaurant-backend\
 ```
 
 Install dependencies:
+```
 npm install
+```
 
 Run the application:
+```
+npm run start
+```
 
 The application will be available at http://localhost:4200.
 
@@ -38,16 +43,22 @@ MatFormField and MatInput: Used for the search input field.
 MatIcon: Used for icons within the application.
 Change Detection
 ChangeDetectorRef: Manually triggers change detection to ensure the product table updates when a new product is added.
+
 Running the Application
 Start the development server:
+
 
 The application will be available at http://localhost:4200.
 
 Add a new product:
+```
+cd .\restaurant-backend\
+```
+```
+ng serve
+```
 
-Click the "Add" button to open the product creation dialog.
-Fill in the product details and submit.
-The product list will automatically update to include the new product.
-Search for products:
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-Use the search input to filter products by name or other attributes.
+
