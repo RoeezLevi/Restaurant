@@ -8,6 +8,8 @@ import { Product } from '../models/product.model';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductNewComponent } from '../product/product-new/product-new.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTableDataSource } from '@angular/material/table';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-index',
@@ -24,11 +26,24 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class IndexComponent {
   searchData: string = 'Initial search data';
+  dataSource = new MatTableDataSource<Product>();
 
   constructor(
     private productService: ProductService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private cdr: ChangeDetectorRef
   ) {}
+
+  ngOnInit() {
+    this.loadProducts();
+  }
+
+  loadProducts(): void {
+    this.productService.getProducts().subscribe((data) => {
+      this.dataSource.data = data;
+      this.cdr.detectChanges(); 
+    });
+  }
 
   handleSearch(searchTerm: string): void {
     console.log('Search term:', searchTerm);
@@ -42,7 +57,9 @@ export class IndexComponent {
 
     dialogRef.afterClosed().subscribe((result: Product) => {
       if (result) {
-        this.productService.createProduct(result).subscribe(() => {});
+        this.productService.createProduct(result).subscribe(() => {
+          this.loadProducts(); 
+        });
       } else {
         console.error('Product creation was cancelled or failed.');
       }
