@@ -7,8 +7,9 @@ Setup Instructions
 Prerequisites
 Node.js (v14 or higher)
 Angular CLI (v12 or higher)
-Installation
-Clone the repository:
+##Installation:
+
+##Clone the repository:
 ```
 git https://github.com/RoeezLevi/Restaurant.git
 ```
@@ -16,22 +17,25 @@ git https://github.com/RoeezLevi/Restaurant.git
 cd .\restaurant-backend\
 ```
 
-Install dependencies:
+##Install dependencies:
 ```
 npm install
 ```
 
-Run the application:
+##Run the application:
 ```
 npm run start
 ```
 
 The application will be available at http://localhost:4200.
 
-Design Choices
-Component Structure
+##Design Choices
+Component Structure:
+
 IndexComponent: The main component that handles the product list and search functionality.
+
 ProductTableComponent: Displays the list of products in a table format.
+
 ProductSearchComponent: Provides a search input for filtering products.
 ProductNewComponent: A dialog component for adding new products.
 Services
@@ -50,7 +54,7 @@ Start the development server:
 
 The application will be available at http://localhost:4200.
 
-Add a new product:
+##Add a new product:
 ```
 cd .\restaurant-backend\
 ```
@@ -58,7 +62,7 @@ cd .\restaurant-backend\
 ng serve
 ```
 
-License
+##License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 
