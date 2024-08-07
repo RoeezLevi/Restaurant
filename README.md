@@ -9,9 +9,12 @@ Node.js (v14 or higher)
 Angular CLI (v12 or higher)
 Installation
 Clone the repository:
-```bash
-git [clone https://github.com/your-repo/product-management-app.git](https://github.com/RoeezLevi/Restaurant.git)
+```
+git (https://github.com/RoeezLevi/Restaurant.git)
+```
+```
 cd .\restaurant-backend\
+```
 
 Install dependencies:
 npm install
