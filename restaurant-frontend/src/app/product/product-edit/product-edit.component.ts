@@ -21,6 +21,7 @@ export class EditProductDialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: Product
   ) {
     this.editProductForm = this.fb.group({
+      id: [data.id],
       name: [data.name, Validators.required],
       quantity: [data.quantity, [Validators.required, Validators.min(1)]],
       serialNumber: [data.serialNumber, Validators.required],

@@ -22,21 +22,8 @@ export class ProductService {
     return this.http.get<Product>(`${this.apiUrl}/${id}`);
   }
 
-  createProduct(): Observable<Product> {
-    const dialogRef = this.dialog.open(ProductNewComponent, {
-      width: '400px',
-    });
-
-    return from(dialogRef.afterClosed()).pipe(
-      switchMap((result) => {
-        if (result) {
-          console.log('New product data:', result);
-          return this.http.post<Product>(this.apiUrl, result);
-        } else {
-          throw new Error('Dialog closed without data');
-        }
-      })
-    );
+  createProduct(product: Product): Observable<Product> {
+    return this.http.post<Product>(`${this.apiUrl}`, product);
   }
 
   updateProduct(id: number, product: Product): Observable<Product> {

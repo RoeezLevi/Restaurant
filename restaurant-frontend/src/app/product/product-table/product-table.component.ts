@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { EditProductDialogComponent } from '../product-edit/product-edit.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-product-table',
@@ -27,7 +28,8 @@ import { EditProductDialogComponent } from '../product-edit/product-edit.compone
     FormsModule,
     HttpClientModule,
     CommonModule,
-    MatDialogModule, 
+    MatDialogModule,
+    MatButtonModule,
   ],
   templateUrl: './product-table.component.html',
   styleUrls: ['./product-table.component.css'],
@@ -51,13 +53,13 @@ export class ProductTableComponent implements OnInit {
     private dialog: MatDialog
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.loadProducts();
   }
 
   loadProducts(): void {
     this.productService.getProducts().subscribe((data) => {
-      this.dataSource.data = data.filter((product) => !product.isDeleted);
+      this.dataSource.data = data;
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
     });
@@ -88,9 +90,15 @@ export class ProductTableComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result: Product) => {
       if (result) {
-        this.productService.updateProduct(result.id, result).subscribe(() => {
-          this.loadProducts();
-        });
+        console.log('Dialog result:', result); // Debugging statement
+        console.log('Product ID:', result.id); // Debugging statement
+        if (result.id) {
+          this.productService.updateProduct(result.id, result).subscribe(() => {
+            this.loadProducts();
+          });
+        } else {
+          console.error('Product ID is undefined:', result); // Debugging statement
+        }
       }
     });
   }
