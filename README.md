@@ -13,11 +13,17 @@ Angular CLI (v12 or higher)
 ```
 git https://github.com/RoeezLevi/Restaurant.git
 ```
+
+
+## Install dependencies:
 ```
 cd .\restaurant-backend\
 ```
-
-## Install dependencies:
+```
+npm install
+```
+cd .\restaurant-frontend\
+```
 ```
 npm install
 ```
@@ -25,6 +31,9 @@ npm install
 ## Run the application:
 ```
 npm run start
+```
+```
+ng serve
 ```
 
 The application will be available at http://localhost:4200.
@@ -49,17 +58,10 @@ Change Detection
 ChangeDetectorRef: Manually triggers change detection to ensure the product table updates when a new product is added.
 
 Running the Application
-Start the development server:
 
 
-The application will be available at http://localhost:4200.
 
-## Add a new product:
-```
-cd .\restaurant-backend\
-```
-```
-ng serve
-```
+
+
 
 
