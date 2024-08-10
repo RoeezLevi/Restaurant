@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "UpdatedProduct1",
+    "quantity": 20,
+    "serialNumber": "TO1245",
+    "createdAt": "2024-07-30T10:35:19.827Z",
+    "updatedAt": "2024-08-06T15:35:29.689Z",
+    "isDeleted": false
+  },
+  {
+    "id": 2,
+    "name": "Sample Product",
+    "quantity": 12,
+    "serialNumber": "SN123452",
+    "createdAt": "2024-07-30T10:35:38.163Z",
+    "updatedAt": "2024-08-07T17:44:25.041Z",
+    "isDeleted": true
+  }
+]
